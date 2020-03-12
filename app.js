@@ -6,7 +6,6 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const compression = require('compression');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
-// const serverless = require("serverless-http");
 
 const port = 3000;
 
@@ -37,11 +36,6 @@ app.set('views', './view/public');
 app.set('view engine', 'pug');
 
 //route
-// const netlify = '/.netlify/functions/app';
-// app.use(netlify, require('./controller/cloudflareController.js')(app));
 require('./controller/cloudflareController.js')(app);
-
-// module.exports = app;
-// module.exports.handler = serverless(app);
 
 app.listen(port, () => console.log(`Server is listening on port ${port}`));

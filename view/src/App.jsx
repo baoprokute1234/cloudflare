@@ -40,12 +40,12 @@ const App = () => {
         const loop = async () => {
             while (isLoop) {
                 if (await sendRequest(referrer)) {
-                    console.log('You get 1 GB')
+                    console.log(`Got 1GB Data`);
                 } else {
                     for (let r = 0; r < retryTimes; r++) {
                         await sleep(sleepTime * 1000);
                         if (await sendRequest(referrer)) {
-                            console.log(`retry number ${r + 1}`);
+                            console.log(`Got 1GB Data after ${r + 1} retry`);
                             break;
                         } else {
                             console.log(`Error, will sleep for ${sleepTime}s`);

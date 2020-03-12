@@ -11,12 +11,10 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^3.21.3",
-    "netlify-lambda": "^1.6.3",
     "pug": "^2.0.4",
     "ramda": "^0.27.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "serverless-http": "^2.3.2"
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -48,6 +46,7 @@
   },
   "scripts": {
     "dev": "nodemon --exec babel-node app.js",
+    "babel-dev": "babel-node app.js",
     "start": "netlify-lambda serve .",
     "build": "netlify-lambda build ."
   }
