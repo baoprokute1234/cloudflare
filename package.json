@@ -46,8 +46,6 @@
   },
   "scripts": {
     "dev": "nodemon --exec babel-node app.js",
-    "babel-dev": "babel-node app.js",
-    "start": "netlify-lambda serve .",
-    "build": "netlify-lambda build ."
+    "babel-dev": "babel-node app.js"
   }
 }
