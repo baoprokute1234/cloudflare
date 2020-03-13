@@ -13,14 +13,14 @@ const port = 3000;
 const app = express();
 
 //webpack-dev-middleware
-const config = require('./webpack.config.js')('production');
-const compiler = webpack(config);
+// const config = require('./webpack.config.js')('dev');
+// const compiler = webpack(config);
 
-app.use(webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
-}));
+// app.use(webpackDevMiddleware(compiler, {
+//     publicPath: config.output.publicPath
+// }));
 
-app.use('/', express.static(path.join(__dirname, 'dist')));
+app.use('/', express.static(path.join(__dirname)));
 
 //stuffs
 app.use(cors());
@@ -32,8 +32,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //view engine
-app.set('views', './view/public');
-app.set('view engine', 'pug');
+// app.set('views', './view/public');
+// app.set('view engine', 'pug');
 
 //route
 require('./controller/cloudflareController.js')(app);

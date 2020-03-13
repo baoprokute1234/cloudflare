@@ -1,9 +1,10 @@
-import { genString } from '../common/common.js';
-import axios from 'axios';
+const genString = require('../common/common.js').genString;
+const axios = require('axios').default;
+const path = require('path');
 
 module.exports = app => {
     app.get('/', (req, res) => {
-        res.render('index');
+        res.sendFile(path.join(__dirname, 'index.html'));
     })
 
     app.post('/:referrer', (req, res) => {

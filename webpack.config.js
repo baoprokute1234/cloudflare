@@ -124,7 +124,7 @@ module.exports = function (env) {
         inject: false,
         hash: true,
         template: path.join(__dirname, 'view/public/index.pug'),
-        filename: 'index.template',
+        filename: 'index.html',
         favicon: path.join(__dirname, 'view/public/favicon.png'),
       }),
       new MiniCssExtractPlugin({

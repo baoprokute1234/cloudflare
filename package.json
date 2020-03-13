@@ -1,7 +1,7 @@
 {
   "name": "cloudflare2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2",
@@ -41,11 +41,17 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^3.0.0",
     "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
     "dev": "nodemon --exec babel-node app.js",
-    "babel-dev": "babel-node app.js"
+    "babel-dev": "babel-node app.js",
+    "build": "rm -rf dist/ && webpack --mode production --config webpack.config.js && webpack --mode production --config webpack.app.config.js"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
